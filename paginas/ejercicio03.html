@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Préstamo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../ESTILOS/styles03.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Calculadora de Préstamo (Interés Simple)</h2>
+        <div class="card p-4 shadow-sm">
+            <form id="loanCalculatorForm">
+                <div class="form-group">
+                    <label for="loanAmount">Monto del Préstamo (P):</label>
+                    <input type="number" class="form-control" id="loanAmount" placeholder="Ingrese el monto del préstamo" min="0.01" step="0.01" required>
+                    <div class="invalid-feedback" id="loanAmountError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="interestRate">Tasa de Interés Anual (r) (%):</label>
+                    <input type="number" class="form-control" id="interestRate" placeholder="Ej: 5" min="0.01" step="0.01" required>
+                    <div class="invalid-feedback" id="interestRateError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="loanTerm">Plazo en Años (t):</label>
+                    <input type="number" class="form-control" id="loanTerm" placeholder="Ej: 3" min="0.01" step="0.01" required>
+                    <div class="invalid-feedback" id="loanTermError"></div>
+                </div>
+                <button type="submit" class="btn btn-info btn-block">Calcular Préstamo</button>
+            </form>
+
+            <div class="mt-4 p-3 border rounded bg-light" id="loanResultDiv" style="display: none;">
+                <h4 class="text-center">Resultados del Préstamo</h4>
+                <p><strong>Monto del Préstamo:</strong> S/ <span id="displayLoanAmount"></span></p>
+                <p><strong>Tasa de Interés Anual:</strong> <span id="displayInterestRate"></span>%</p>
+                <p><strong>Plazo en Años:</strong> <span id="displayLoanTerm"></span></p>
+                <hr>
+                <h5 class="text-success">Interés (I): S/ <span id="displayInterest"></span></h5>
+                <h5 class="text-primary">Monto Total a Pagar: S/ <span id="displayTotalAmount"></span></h5>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../JS/validar03.js"></script>
+</body>
+</html>

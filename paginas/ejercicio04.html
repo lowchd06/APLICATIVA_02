@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../ESTILOS/styles04.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Calculadora de IMC (Índice de Masa Corporal)</h2>
+        <div class="card p-4 shadow-sm">
+            <form id="imcCalculatorForm">
+                <div class="form-group">
+                    <label for="fullName">Nombres y Apellidos:</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Ingrese nombres y apellidos" required>
+                    <div class="invalid-feedback" id="fullNameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="weightKg">Peso (kg):</label>
+                    <input type="number" class="form-control" id="weightKg" placeholder="Ingrese su peso en kg" min="0.1" step="0.01" required>
+                    <div class="invalid-feedback" id="weightError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="heightM">Altura (m):</label>
+                    <input type="number" class="form-control" id="heightM" placeholder="Ingrese su altura en metros (ej: 1.75)" min="0.1" step="0.01" required>
+                    <div class="invalid-feedback" id="heightError"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Calcular IMC</button>
+            </form>
+
+            <div class="mt-4 p-3 border rounded bg-light" id="imcResultDiv" style="display: none;">
+                <h4 class="text-center">Resultados del IMC</h4>
+                <p><strong>Nombres y Apellidos:</strong> <span id="displayName"></span></p>
+                <p><strong>Peso:</strong> <span id="displayWeight"></span> kg</p>
+                <p><strong>Altura:</strong> <span id="displayHeight"></span> m</p>
+                <hr>
+                <h5 class="text-info">Su IMC es: <span id="displayImc"></span></h5>
+                <p class="mt-3"><strong>Clasificación:</strong> <span id="displayClassification" class="font-weight-bold"></span></p>
+                <div class="mt-3">
+                    <h6>Rangos de Clasificación Oficial:</h6>
+                    <ul>
+                        <li>&lt; 18.5: <span class="badge badge-secondary">Bajo peso</span></li>
+                        <li>18.5 - 24.9: <span class="badge badge-success">Normal</span></li>
+                        <li>25.0 - 29.9: <span class="badge badge-warning">Sobrepeso</span></li>
+                        <li>30 o más: <span class="badge badge-danger">Obesidad</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../JS/validar04.js"></script>
+</body>
+</html>

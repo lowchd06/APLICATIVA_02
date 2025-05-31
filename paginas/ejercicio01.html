@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sueldo Neto</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../ESTILOS/styles01.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Calculadora de Sueldo Neto</h2>
+        <div class="card p-4 shadow-sm">
+            <form id="salaryForm">
+                <div class="form-group">
+                    <label for="dni">DNI:</label>
+                    <input type="text" class="form-control" id="dni" placeholder="Ingrese DNI" maxlength="8" required>
+                    <div class="invalid-feedback" id="dniError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese Nombre" required>
+                    <div class="invalid-feedback" id="nombreError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo:</label>
+                    <select class="form-control" id="cargo" required>
+                        <option value="">Seleccione un cargo</option>
+                        <option value="gerente">Gerente</option>
+                        <option value="analista">Analista</option>
+                        <option value="desarrollador">Desarrollador</option>
+                        <option value="soporte">Soporte</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sueldoBruto">Sueldo Bruto:</label>
+                    <input type="text" class="form-control" id="sueldoBruto" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="porcentajeDescuento">Porcentaje de Descuento (%):</label>
+                    <input type="number" class="form-control" id="porcentajeDescuento" placeholder="Ej: 10" min="0" max="100" step="0.01" required>
+                    <div class="invalid-feedback" id="descuentoError"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Calcular Sueldo Neto</button>
+            </form>
+
+            <div class="mt-4 p-3 border rounded bg-light" id="resultadoDiv" style="display: none;">
+                <h4 class="text-center">Resultado</h4>
+                <p><strong>DNI:</strong> <span id="displayDni"></span></p>
+                <p><strong>Nombre:</strong> <span id="displayNombre"></span></p>
+                <p><strong>Cargo:</strong> <span id="displayCargo"></span></p>
+                <p><strong>Sueldo Bruto:</strong> S/ <span id="displaySueldoBruto"></span></p>
+                <p><strong>Porcentaje de Descuento:</strong> <span id="displayPorcentajeDescuento"></span>%</p>
+                <h5 class="text-success">Sueldo Neto: S/ <span id="displaySueldoNeto"></span></h5>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../JS/vaildar01.js"></script>
+</body>
+</html>

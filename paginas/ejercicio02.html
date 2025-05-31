@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Consumo de Gasolina</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../ESTILOS/styles02.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Calculadora de Consumo de Gasolina</h2>
+        <div class="card p-4 shadow-sm">
+            <form id="fuelCalculatorForm">
+                <div class="form-group">
+                    <label for="vehicleType">Tipo de Vehículo:</label>
+                    <select class="form-control" id="vehicleType" required>
+                        <option value="">Seleccione un tipo de vehículo</option>
+                        <option value="auto_compacto">Auto compacto (ej. Toyota Yaris, Hyundai i10)</option>
+                        <option value="sedan_mediano">Sedán mediano (ej. Toyota Corolla, Mazda 3)</option>
+                        <option value="suv_pequena">SUV pequeña (ej. Honda HR-V, Toyota RAV4)</option>
+                        <option value="camioneta_suv_grande">Camioneta o SUV grande (ej. Ford Explorer)</option>
+                        <option value="pick_up">Pick-up (ej. Toyota Hilux, Ford Ranger)</option>
+                        <option value="auto_hibrido">Auto híbrido (ej. Toyota Prius, Corolla Hybrid)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="consumptionKmPerL">Consumo del vehículo (km/l):</label>
+                    <input type="number" class="form-control" id="consumptionKmPerL" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="distanceKm">Distancia del viaje (km):</label>
+                    <input type="number" class="form-control" id="distanceKm" placeholder="Ingrese la distancia en km" min="0.01" step="0.01" required>
+                    <div class="invalid-feedback" id="distanceError"></div>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Calcular Litros Necesarios</button>
+            </form>
+
+            <div class="mt-4 p-3 border rounded bg-light" id="fuelResultDiv" style="display: none;">
+                <h4 class="text-center">Resultado del Cálculo</h4>
+                <p><strong>Tipo de Vehículo:</strong> <span id="displayVehicleType"></span></p>
+                <p><strong>Consumo del Vehículo:</strong> <span id="displayConsumption"></span> km/l</p>
+                <p><strong>Distancia del Viaje:</strong> <span id="displayDistance"></span> km</p>
+                <h5 class="text-primary">Litros Necesarios: <span id="displayLitersNeeded"></span> Litros</h5>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../JS/validar02.js"></script>
+</body>
+</html>
